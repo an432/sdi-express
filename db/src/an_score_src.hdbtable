@@ -1,0 +1,4 @@
+COLUMN TABLE "sdi_express.db::an_score_src" (
+	"cid" NVARCHAR(20),
+	"score" decimal(2,0)
+)

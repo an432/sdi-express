@@ -1,0 +1,1 @@
+view "sdi_express.db::v100records" as select top 100 * from "sdi_express.db::RUNAMESFROMMKT"

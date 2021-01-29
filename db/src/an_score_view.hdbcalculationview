@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sdi_express.db::an_score_view" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="an_score_view"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="sdi_express.db::an_score_src">
+    <resourceUri>sdi_express.db::an_score_src</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="sdi_express.db::an_score_src">
+  <attributes>
+    <attribute id="cid" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="cid"/>
+      <keyMapping columnObjectName="an_score_src" columnName="cid"/>
+    </attribute>
+    <attribute id="score" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="score"/>
+      <keyMapping columnObjectName="an_score_src" columnName="score"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="fakeuuid" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="fakeuuid"/>
+      <keyCalculation datatype="VARCHAR" expressionLanguage="SQL" length="4000">
+        <formula>concat('00000000-0000-0000-0000-', LPAD(&quot;cid&quot;, 12,'0'))</formula>
+      </keyCalculation>
+      </calculatedAttribute></calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

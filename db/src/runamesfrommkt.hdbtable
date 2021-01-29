@@ -1,0 +1,8 @@
+COLUMN TABLE "sdi_express.db::RUNAMESFROMMKT" (
+	"SAP_UUID" NVARCHAR(4000),
+	"cid" BIGINT,
+	"name" NVARCHAR(50),
+	"midname" NVARCHAR(50),
+	"surname" NVARCHAR(50),
+	"fullname" NVARCHAR(150)
+)
